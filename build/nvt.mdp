@@ -1,0 +1,26 @@
+; 100 ps NVT, protein heavy atoms restrained
+define        = -DPOSRES
+integrator    = md
+nsteps        = 50000
+dt            = 0.002
+nstxout-compressed = 5000
+nstenergy     = 500
+nstlog        = 500
+continuation  = no
+constraints   = h-bonds
+constraint-algorithm = lincs
+cutoff-scheme = Verlet
+nstlist       = 10
+rcoulomb      = 1.0
+rvdw          = 1.0
+coulombtype   = PME
+tcoupl        = V-rescale
+tc-grps       = Protein Non-Protein
+tau-t         = 0.1 0.1
+ref-t         = 300 300
+pcoupl        = no
+pbc           = xyz
+DispCorr      = EnerPres
+gen-vel       = yes
+gen-temp      = 300
+gen-seed      = -1
